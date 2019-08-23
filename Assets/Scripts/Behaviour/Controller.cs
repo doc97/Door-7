@@ -28,7 +28,7 @@ public class Controller : MonoBehaviour
 
     private bool SceneExists(string name)
     {
-        // Returns -1 if the scene does not exist
+        // Returns -1 if the scene does not exist in BuildSettings
         return SceneUtility.GetBuildIndexByScenePath(name) >= 0;
     }
 }
