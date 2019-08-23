@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 /* Singleton for storing CorridorScene state */
 public sealed class CorridorState
 {
@@ -17,5 +19,9 @@ public sealed class CorridorState
     public Door ActiveDoor {
         get { return _activeDoor; }
         set { _activeDoor = value; }
+    }
+    private Dictionary<Door, string> _doorToScene = new Dictionary<Door, string>();
+    public Dictionary<Door, string> DoorToScene {
+        get { return _doorToScene; }
     }
 }
