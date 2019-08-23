@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 
-public class DoorHighlight : MonoBehaviour
+public class Door : MonoBehaviour
 {
     public CorridorState.Door door = CorridorState.Door.None;
 
