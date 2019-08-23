@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class FollowObject : MonoBehaviour {
+    public bool snapAtStart;
     public Transform target;
     public float smoothTime = 0.2f;
     [Tooltip("Units per second")]
@@ -8,6 +9,12 @@ public class FollowObject : MonoBehaviour {
     public Vector3 offset;
 
     private Vector3 velocity = Vector3.zero;
+
+    void Start()
+    {
+        if (snapAtStart)
+            transform.position = offset + target.position;
+    }
 
     void LateUpdate()
     {
