@@ -83,8 +83,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7182609356894378949}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aba14c48622daf647a6749ceee822cdf, type: 3}
+  m_Script: {fileID: 11500000, guid: 636a0043aa9f8ec46a8a35f26b580c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snapAtStart: 0
   target: {fileID: 0}
-  smoothSpeed: 0.125
+  smoothTime: 0.2
+  maxSpeed: Infinity
+  offset: {x: 0, y: 0, z: 0}

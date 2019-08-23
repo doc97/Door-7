@@ -3,6 +3,8 @@ using UnityEngine.Assertions;
 
 public class DoorHighlight : MonoBehaviour
 {
+    public CorridorState.Door door = CorridorState.Door.None;
+
     private SpriteRenderer sprite;
 
     void Start()
@@ -15,6 +17,7 @@ public class DoorHighlight : MonoBehaviour
     {
         if (IsPlayer(other))
         {
+            CorridorState.Instance.ActiveDoor = door;
             sprite.color = Color.white;
         }
     }
@@ -23,6 +26,7 @@ public class DoorHighlight : MonoBehaviour
     {
         if (IsPlayer(other))
         {
+            CorridorState.Instance.ActiveDoor = CorridorState.Door.None;
             sprite.color = Color.clear;
         }
     }
