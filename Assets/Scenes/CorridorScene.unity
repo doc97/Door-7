@@ -290,6 +290,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1936e2285734454fbf113f5233c1cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &997219277 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1561149033787189723, guid: c088d4ecc0a0b9143af3b2a0de81d3fd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1760749632}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1094200385
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +577,7 @@ PrefabInstance:
     - target: {fileID: 1561149033773116711, guid: c088d4ecc0a0b9143af3b2a0de81d3fd,
         type: 3}
       propertyPath: m_Name
-      value: FadeIn
+      value: FadeCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 1561149033773116710, guid: c088d4ecc0a0b9143af3b2a0de81d3fd,
         type: 3}
@@ -982,6 +994,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075321018953335462, guid: a98326475b35d5442814cd25457b1d93,
+        type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 997219277}
+    - target: {fileID: 7075321018953335462, guid: a98326475b35d5442814cd25457b1d93,
+        type: 3}
+      propertyPath: fadeDuration
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a98326475b35d5442814cd25457b1d93, type: 3}

@@ -739,7 +739,7 @@ PrefabInstance:
     - target: {fileID: 1561149033773116711, guid: c088d4ecc0a0b9143af3b2a0de81d3fd,
         type: 3}
       propertyPath: m_Name
-      value: FadeIn
+      value: FadeCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 1561149033773116710, guid: c088d4ecc0a0b9143af3b2a0de81d3fd,
         type: 3}

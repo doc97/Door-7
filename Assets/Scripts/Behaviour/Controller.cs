@@ -1,28 +1,32 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class Controller : MonoBehaviour
 {
+    public Image fadeImage;
+    public float fadeDuration;
+
     private bool isLoading;
 
     public void LoadScene(string name)
     {
         if (isLoading || !SceneExists(name))
             return;
-
         isLoading = true;
-        StartCoroutine(LoadSceneAsync(name));
+ 
+        // Fade to black and load new scene
+        fadeImage.color = Color.clear;
+        fadeImage.DOFade(1, fadeDuration).OnComplete(() => StartCoroutine(LoadSceneAsync(name)));
     }
 
     private IEnumerator LoadSceneAsync(string name)
     {
         AsyncOperation load = SceneManager.LoadSceneAsync(name);
-
         while (!load.isDone)
-        {
             yield return null;
-        }
         isLoading = false;
     }
 
