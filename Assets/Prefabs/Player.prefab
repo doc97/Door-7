@@ -142,3 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
+  speed: 5
+  epsilon: 0.32
+  leftBoundary: {fileID: 0}
+  rightBoundary: {fileID: 0}

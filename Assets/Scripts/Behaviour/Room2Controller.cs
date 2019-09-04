@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class Room2Controller : MonoBehaviour
+public class Room2Controller : RoomController
 {
     private const int RESET_COUNT = 3;
 
@@ -20,11 +20,7 @@ public class Room2Controller : MonoBehaviour
 
     private PlayerController playerController;
     private int moveCounter;
-    private bool _isActive;
-    public bool IsActive {
-        get { return _isActive; }
-        set { _isActive = value; }
-    }
+    private bool isResetActive;
     #endregion
 
     void Start()
@@ -32,14 +28,11 @@ public class Room2Controller : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
     }
 
-    void Update()
+    protected override void OnUpdate()
     {
-        if (!IsActive)
-            return;
-
-        if (player.transform.position.x > resetMarker.position.x)
+        if (isResetActive && player.transform.position.x > resetMarker.position.x)
         {
-            IsActive = false;
+            isResetActive = false;
             playerController.Active = false;
             ++moveCounter;
 
@@ -47,7 +40,7 @@ public class Room2Controller : MonoBehaviour
                 .DOMoveX(resetPosition.position.x, 2)
                 .SetEase(Ease.InOutCubic)
                 .OnComplete(() => {
-                    IsActive = true;
+                    isResetActive = true;
                     playerController.Active = true;
                     if (moveCounter >= RESET_COUNT)
                         Deactivate();
@@ -61,17 +54,17 @@ public class Room2Controller : MonoBehaviour
         }
     }
 
-    public void Activate()
+    protected override void OnActivate()
     {
         moveCounter = 0;
-        IsActive = true;
+        isResetActive = true;
         text.text = GetNextText(0);
     }
 
-    public void Deactivate()
+    protected override void OnDeactivate()
     {
         moveCounter = 0;
-        IsActive = false;
+        isResetActive = false;
         text.text = GetNextText(-1);
     }
 

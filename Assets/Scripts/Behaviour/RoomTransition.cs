@@ -9,7 +9,7 @@ public class RoomTransition : MonoBehaviour
     [SerializeField]
     private GameObject cam;
     [SerializeField]
-    private GameObject room2;
+    private GameObject[] rooms;
     [SerializeField]
     private Transform[] leftBoundaries;
     [SerializeField]
@@ -23,7 +23,7 @@ public class RoomTransition : MonoBehaviour
 
     private PlayerController playerController;
     private CameraController cameraController;
-    private Room2Controller room2Controller;
+    private RoomController[] roomControllers;
     private int roomIndex;
     private bool isTransitioning;
     #endregion
@@ -35,7 +35,9 @@ public class RoomTransition : MonoBehaviour
 
         playerController = player.GetComponent<PlayerController>();
         cameraController = cam.GetComponent<CameraController>();
-        room2Controller = room2.GetComponentInChildren<Room2Controller>();
+        roomControllers = new RoomController[rooms.Length];
+        for (int i = 0; i < rooms.Length; ++i)
+            roomControllers[i] = rooms[i].GetComponentInChildren<RoomController>();
 
         playerController.leftBoundary = leftBoundaries[roomIndex];
         playerController.rightBoundary = rightBoundaries[roomIndex];
@@ -91,12 +93,14 @@ public class RoomTransition : MonoBehaviour
 
     private void DeactivateControllers()
     {
-        room2Controller.Deactivate();
+        foreach (RoomController controller in roomControllers)
+            controller?.Deactivate();
     }
 
     private void ActivateController(int index)
     {
-        if (index == 1)
-            room2Controller.Activate();
+        if (index < 0 || index >= roomControllers.Length)
+            return;
+        roomControllers[index]?.Activate();
     }
 }

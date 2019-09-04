@@ -3,8 +3,10 @@
 public class PlayerController : MonoBehaviour
 {
     #region fields
-    [SerializeField, Tooltip("Units per second")]
-    private float maxSpeed = 1;
+    [Tooltip("Units per second")]
+    public float maxSpeed = 1;
+    [Tooltip("Units per second")]
+    public float speed = 1;
     public float epsilon;
     public Transform leftBoundary;
     public Transform rightBoundary;
@@ -28,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 newPosition = transform.position;
         float inputDeltaX = Input.GetAxis("Horizontal");
-        float translateX = maxSpeed * inputDeltaX * Time.deltaTime;
+        float translateX = speed * inputDeltaX * Time.deltaTime;
         newPosition += Vector3.right * translateX;
         if (newPosition.x < leftBoundary.position.x + epsilon)
             newPosition.x = leftBoundary.position.x + epsilon;
