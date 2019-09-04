@@ -6,29 +6,42 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Camera cam;
     [SerializeField]
-    private Transform leftBoundary;
-    [SerializeField]
-    private Transform rightBoundary;
-    [SerializeField]
     private Transform followObject;
     [SerializeField]
     private Vector3 offset = Vector3.zero;
+    public Transform leftBoundary;
+    public Transform rightBoundary;
+
+    private bool _active;
+    public bool Active {
+        get { return _active; }
+        set { _active = value; }
+    }
+    private float _epsilon;
+    public float Epsilon {
+        get { return _epsilon; }
+        set { _epsilon = value; }
+    }
     #endregion
 
     void Start()
     {
+        Active = true;
         if (cam == null)
             cam = Camera.main;
+        Epsilon = cam.orthographicSize * cam.aspect;
     }
 
     void LateUpdate()
     {
+        if (!Active)
+            return;
+
         Vector3 newPosition = offset + followObject.position;
-        float camHalfWidth = cam.orthographicSize * cam.aspect;
-        if (newPosition.x < leftBoundary.position.x + camHalfWidth)
-            newPosition.x = leftBoundary.position.x + camHalfWidth;
-        if (newPosition.x > rightBoundary.position.x - camHalfWidth)
-            newPosition.x = rightBoundary.position.x - camHalfWidth;
+        if (newPosition.x < leftBoundary.position.x + Epsilon)
+            newPosition.x = leftBoundary.position.x + Epsilon;
+        if (newPosition.x > rightBoundary.position.x - Epsilon)
+            newPosition.x = rightBoundary.position.x - Epsilon;
         transform.position = newPosition;
     }
 }

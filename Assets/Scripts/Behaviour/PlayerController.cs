@@ -2,18 +2,30 @@
 
 public class PlayerController : MonoBehaviour
 {
+    #region fields
     [SerializeField, Tooltip("Units per second")]
     private float maxSpeed = 1;
-    [SerializeField]
-    private Transform leftBoundary;
-    [SerializeField]
-    private Transform rightBoundary;
-    [SerializeField]
-    private float epsilon;
-    
+    public float epsilon;
+    public Transform leftBoundary;
+    public Transform rightBoundary;
+
+    private bool _active;
+    public bool Active {
+        get { return _active; }
+        set { _active = value; }
+    }
+    #endregion
+
+    void Start()
+    {
+        Active = true;
+    }
 
     void Update()
     {
+        if (!Active)
+            return;
+
         Vector3 newPosition = transform.position;
         float inputDeltaX = Input.GetAxis("Horizontal");
         float translateX = maxSpeed * inputDeltaX * Time.deltaTime;
