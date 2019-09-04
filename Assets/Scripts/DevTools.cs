@@ -22,5 +22,7 @@ public class DevTools : MonoBehaviour
             roomTransition.GotoRoom(1, true);
         else if (Input.GetKeyDown(KeyCode.Alpha3))
             roomTransition.GotoRoom(2, true);
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+            roomTransition.GotoRoom(3, true);
     }
 }

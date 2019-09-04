@@ -7,8 +7,7 @@ public class CameraController : MonoBehaviour
     private Camera cam;
     [SerializeField]
     private Transform followObject;
-    [SerializeField]
-    private Vector3 offset = Vector3.zero;
+    public Vector3 offset = Vector3.zero;
     public Transform leftBoundary;
     public Transform rightBoundary;
 

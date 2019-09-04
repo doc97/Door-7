@@ -76,13 +76,21 @@ public class RoomTransition : MonoBehaviour
         if (updatePlayerPosition) {
             Vector3 position = player.transform.position;
             position.x = playerController.leftBoundary.position.x + playerController.epsilon;
+            position.y = 0;
             player.transform.position = position;
         }
 
         ActivateController(roomIndex);
 
+        Vector3 camTarget = new Vector3(
+            cameraController.offset.x
+                + cameraController.leftBoundary.position.x
+                + cameraController.Epsilon,
+            cameraController.offset.y,
+            cameraController.offset.z
+        );
         cam.transform
-            .DOMoveX(cameraController.leftBoundary.position.x + cameraController.Epsilon, duration)
+            .DOMove(camTarget, duration)
             .SetEase(ease)
             .OnComplete(() => {
                 playerController.Active = true;
