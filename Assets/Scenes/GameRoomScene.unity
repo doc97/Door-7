@@ -112,6 +112,66 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &103949195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 103949196}
+  m_Layer: 0
+  m_Name: RoomLeftBoundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &103949196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103949195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1094200386}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &476461132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476461133}
+  m_Layer: 0
+  m_Name: RoomRightBoundary
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &476461133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476461132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1094200386}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &539878450
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +308,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 103949196}
+  - {fileID: 476461133}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -411,11 +473,41 @@ PrefabInstance:
       propertyPath: offset.y
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1238631676094407220, guid: 65e459ec4c3626948bb323ee16a5de4d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 65e459ec4c3626948bb323ee16a5de4d, type: 3}
 --- !u!4 &1239193803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7182609356894378970, guid: 65e459ec4c3626948bb323ee16a5de4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1239193802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1239193804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7182609356894378949, guid: 65e459ec4c3626948bb323ee16a5de4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1239193802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1239193805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239193804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b664d425d7efc428d8015dfc95c5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1239193806}
+  leftBoundary: {fileID: 103949196}
+  rightBoundary: {fileID: 476461133}
+  followObject: {fileID: 1368690671}
+  offset: {x: 0, y: 3, z: -10}
+--- !u!20 &1239193806 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7182609356894378971, guid: 65e459ec4c3626948bb323ee16a5de4d,
     type: 3}
   m_PrefabInstance: {fileID: 1239193802}
   m_PrefabAsset: {fileID: 0}
@@ -486,6 +578,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 550739659099513351, guid: 5a30917eabf6d07498a1db38def729ce,
+        type: 3}
+      propertyPath: leftBoundary
+      value: 
+      objectReference: {fileID: 103949196}
+    - target: {fileID: 550739659099513351, guid: 5a30917eabf6d07498a1db38def729ce,
+        type: 3}
+      propertyPath: rightBoundary
+      value: 
+      objectReference: {fileID: 476461133}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a30917eabf6d07498a1db38def729ce, type: 3}
 --- !u!4 &1368690671 stripped
