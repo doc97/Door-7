@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class Room2Controller : MonoBehaviour
@@ -8,6 +9,10 @@ public class Room2Controller : MonoBehaviour
     #region fields
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private Text text;
+    [SerializeField]
+    private string[] texts;
     [SerializeField]
     private Transform resetMarker;
     [SerializeField]
@@ -36,16 +41,23 @@ public class Room2Controller : MonoBehaviour
         {
             IsActive = false;
             playerController.Active = false;
+            ++moveCounter;
+
             player.transform
                 .DOMoveX(resetPosition.position.x, 2)
                 .SetEase(Ease.InOutCubic)
                 .OnComplete(() => {
                     IsActive = true;
                     playerController.Active = true;
-                    ++moveCounter;
                     if (moveCounter >= RESET_COUNT)
                         Deactivate();
                 });
+            Sequence seq = DOTween.Sequence();
+            seq.Append(text.DOFade(0, 1));
+            seq.AppendCallback(() => text.text = GetNextText(moveCounter));
+            seq.AppendInterval(0.5f);
+            seq.Append(text.DOFade(1, 1));
+            seq.Play();
         }
     }
 
@@ -53,11 +65,20 @@ public class Room2Controller : MonoBehaviour
     {
         moveCounter = 0;
         IsActive = true;
+        text.text = GetNextText(0);
     }
 
     public void Deactivate()
     {
         moveCounter = 0;
         IsActive = false;
+        text.text = GetNextText(-1);
+    }
+
+    private string GetNextText(int index)
+    {
+        if (index < 0 || index >= texts.Length)
+            return "";
+        return texts[index];
     }
 }
