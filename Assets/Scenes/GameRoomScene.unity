@@ -663,8 +663,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1a37779e0e62c4b8a2449f53ab7a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1368690671}
+  player: {fileID: 1160022735}
   roomTransitionObject: {fileID: 1453731767}
+  texts:
+  - {fileID: 1472955815}
+  - {fileID: 897934666}
 --- !u!1 &818856134
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1444,6 +1447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_GravityScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624224624040280442, guid: 5a30917eabf6d07498a1db38def729ce,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 550739659099513351, guid: 5a30917eabf6d07498a1db38def729ce,
         type: 3}
