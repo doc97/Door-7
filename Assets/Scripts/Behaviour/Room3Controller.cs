@@ -24,7 +24,6 @@ public class Room3Controller : RoomController
 
     void Start()
     {
-        Debug.Assert(texts.Length > 0);
         playerController = player.GetComponent<PlayerController>();
     } 
 
@@ -67,12 +66,7 @@ public class Room3Controller : RoomController
             seq.Append(previousText.DOFade(0, 0.5f)).AppendInterval(0.5f);
         if (inRange)
             seq.Append(texts[index].DOFade(1, 0.5f));
-        seq.OnComplete(() => {
-            if (inRange)
-                previousText = texts[index];
-            else
-                previousText = null;
-        });
+        seq.OnComplete(() => previousText = inRange ? texts[index] : null);
         seq.Play();
     }
 }

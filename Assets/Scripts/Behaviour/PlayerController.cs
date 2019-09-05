@@ -11,21 +11,21 @@ public class PlayerController : MonoBehaviour
     public Transform leftBoundary;
     public Transform rightBoundary;
 
-    private bool _active;
-    public bool Active {
-        get { return _active; }
-        set { _active = value; }
+    private bool _isActive;
+    public bool IsActive {
+        get { return _isActive; }
+        set { _isActive = value; }
     }
     #endregion
 
     void Start()
     {
-        Active = true;
+        IsActive = true;
     }
 
     void Update()
     {
-        if (!Active)
+        if (!IsActive)
             return;
 
         Vector3 newPosition = transform.position;

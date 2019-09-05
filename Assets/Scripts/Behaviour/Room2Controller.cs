@@ -33,7 +33,7 @@ public class Room2Controller : RoomController
         if (isResetActive && player.transform.position.x > resetMarker.position.x)
         {
             isResetActive = false;
-            playerController.Active = false;
+            playerController.IsActive = false;
             ++moveCounter;
 
             player.transform
@@ -41,7 +41,7 @@ public class Room2Controller : RoomController
                 .SetEase(Ease.InOutCubic)
                 .OnComplete(() => {
                     isResetActive = true;
-                    playerController.Active = true;
+                    playerController.IsActive = true;
                     if (moveCounter >= RESET_COUNT)
                         Deactivate();
                 });

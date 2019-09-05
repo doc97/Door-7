@@ -11,10 +11,10 @@ public class CameraController : MonoBehaviour
     public Transform leftBoundary;
     public Transform rightBoundary;
 
-    private bool _active;
-    public bool Active {
-        get { return _active; }
-        set { _active = value; }
+    private bool _isActive;
+    public bool IsActive {
+        get { return _isActive; }
+        set { _isActive = value; }
     }
     private float _epsilon;
     public float Epsilon {
@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        Active = true;
+        IsActive = true;
         if (cam == null)
             cam = Camera.main;
         Epsilon = cam.orthographicSize * cam.aspect;
@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!Active)
+        if (!IsActive)
             return;
 
         Vector3 newPosition = offset + followObject.position;

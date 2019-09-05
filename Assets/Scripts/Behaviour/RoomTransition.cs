@@ -62,8 +62,8 @@ public class RoomTransition : MonoBehaviour
 
         roomIndex = index;
 
-        playerController.Active = false;
-        cameraController.Active = false;
+        playerController.IsActive = false;
+        cameraController.IsActive = false;
         isTransitioning = true;
 
         playerController.leftBoundary = leftBoundaries[roomIndex];
@@ -93,8 +93,8 @@ public class RoomTransition : MonoBehaviour
             .DOMove(camTarget, duration)
             .SetEase(ease)
             .OnComplete(() => {
-                playerController.Active = true;
-                cameraController.Active = true;
+                playerController.IsActive = true;
+                cameraController.IsActive = true;
                 isTransitioning = false;
             });
     }
