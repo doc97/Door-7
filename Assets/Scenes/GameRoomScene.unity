@@ -122,9 +122,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1244335}
   m_Layer: 0
-  m_Name: Room3RightBoundary
+  m_Name: Room4RightBoundary
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -154,7 +154,7 @@ GameObject:
   m_Layer: 0
   m_Name: Room1LeftBoundary
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -166,7 +166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103949195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 482761790}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 133820752}
   - component: {fileID: 133820753}
   m_Layer: 0
-  m_Name: '@Room2Controller'
+  m_Name: '@Room3Controller'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 133820751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0455c2e73ebc49c4e9a56c9b35a60715, type: 3}
+  m_Script: {fileID: 11500000, guid: c9a29521aa5913e4289b05ac2261e316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1160022735}
@@ -235,7 +235,7 @@ GameObject:
   m_Layer: 0
   m_Name: SlowStartMarker
   m_TagString: Untagged
-  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -253,6 +253,36 @@ Transform:
   m_Father: {fileID: 1315903374}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &242338233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 242338234}
+  m_Layer: 0
+  m_Name: Room2RightBoundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &242338234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242338233}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 70, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1167784068}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &375984016
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +295,7 @@ GameObject:
   - component: {fileID: 375984019}
   - component: {fileID: 375984018}
   m_Layer: 5
-  m_Name: Room3Text2
+  m_Name: Room4Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,7 +374,7 @@ GameObject:
   m_Layer: 0
   m_Name: Room1RightBoundary
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -356,7 +386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476461132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70, y: 0, z: 0}
+  m_LocalPosition: {x: 19, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 482761790}
@@ -511,6 +541,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &545929599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 545929600}
+  m_Layer: 0
+  m_Name: Room2LeftBoundary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &545929600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545929599}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1167784068}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &627527496
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +583,7 @@ GameObject:
   - component: {fileID: 627527499}
   - component: {fileID: 627527498}
   m_Layer: 5
-  m_Name: Room1Text2
+  m_Name: Room2Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,7 +605,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -445, y: 0}
+  m_AnchoredPosition: {x: -479, y: 0}
   m_SizeDelta: {x: 12, y: 1.5}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &627527498
@@ -602,7 +662,7 @@ GameObject:
   m_Layer: 0
   m_Name: ResetPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -631,7 +691,7 @@ GameObject:
   - component: {fileID: 709454568}
   - component: {fileID: 709454569}
   m_Layer: 0
-  m_Name: '@Room4Controller'
+  m_Name: '@Room5Controller'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -660,7 +720,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 709454567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd1a37779e0e62c4b8a2449f53ab7a85, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b2ed129a6439cc41a5621e6ba5ea0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1160022735}
@@ -679,7 +739,7 @@ GameObject:
   - component: {fileID: 818856135}
   - component: {fileID: 818856136}
   m_Layer: 0
-  m_Name: '@Room3Controller'
+  m_Name: '@Room4Controller'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -708,7 +768,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 818856134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9a29521aa5913e4289b05ac2261e316, type: 3}
+  m_Script: {fileID: 11500000, guid: fd1a37779e0e62c4b8a2449f53ab7a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1160022735}
@@ -728,7 +788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829530398}
   m_Layer: 0
-  m_Name: Room4
+  m_Name: Room5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,7 +809,7 @@ Transform:
   - {fileID: 1424551475}
   - {fileID: 1506915572}
   m_Father: {fileID: 1094200386}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &897934664
 GameObject:
@@ -763,7 +823,7 @@ GameObject:
   - component: {fileID: 897934667}
   - component: {fileID: 897934666}
   m_Layer: 5
-  m_Name: Room4Text2
+  m_Name: Room5Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,7 +902,7 @@ GameObject:
   m_Layer: 0
   m_Name: SlowEndMarker
   m_TagString: Untagged
-  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -894,7 +954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -480, y: 0}
+  m_AnchoredPosition: {x: -495, y: 0}
   m_SizeDelta: {x: 12, y: 1.5}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1032478887
@@ -949,9 +1009,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1072752198}
   m_Layer: 0
-  m_Name: Room2RightBoundary
+  m_Name: Room3RightBoundary
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -999,6 +1059,7 @@ Transform:
   - {fileID: 2047043716}
   - {fileID: 1453731768}
   - {fileID: 482761790}
+  - {fileID: 1167784068}
   - {fileID: 1505682356}
   - {fileID: 1315903374}
   - {fileID: 829530398}
@@ -1017,7 +1078,7 @@ GameObject:
   - component: {fileID: 1130689705}
   - component: {fileID: 1130689704}
   m_Layer: 5
-  m_Name: Room3Text1
+  m_Name: Room4Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1090,6 +1151,39 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1368690670}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1167784067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167784068}
+  m_Layer: 0
+  m_Name: Room2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1167784068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167784067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 545929600}
+  - {fileID: 242338234}
+  - {fileID: 1975288374}
+  m_Father: {fileID: 1094200386}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1168043162 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7895183313971871095, guid: 1fe0c4ffcde59c74ca1f12d6009c535c,
@@ -1235,7 +1329,7 @@ PrefabInstance:
     - target: {fileID: 7182609356894378970, guid: 65e459ec4c3626948bb323ee16a5de4d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 8.85
       objectReference: {fileID: 0}
     - target: {fileID: 7182609356894378970, guid: 65e459ec4c3626948bb323ee16a5de4d,
         type: 3}
@@ -1350,7 +1444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1315903374}
   m_Layer: 0
-  m_Name: Room3
+  m_Name: Room4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1374,7 +1468,7 @@ Transform:
   - {fileID: 152253870}
   - {fileID: 1013001972}
   m_Father: {fileID: 1094200386}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1368690670
 PrefabInstance:
@@ -1483,7 +1577,7 @@ GameObject:
   m_Layer: 0
   m_Name: Room1NextMarker
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1495,7 +1589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409492993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 68, y: 0, z: 0}
+  m_LocalPosition: {x: 17.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 482761790}
@@ -1513,7 +1607,7 @@ GameObject:
   m_Layer: 0
   m_Name: ResetMarker
   m_TagString: Untagged
-  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1541,9 +1635,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1424551475}
   m_Layer: 0
-  m_Name: Room4LeftBoundary
+  m_Name: Room5LeftBoundary
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1608,21 +1702,25 @@ MonoBehaviour:
   cam: {fileID: 1239193804}
   rooms:
   - {fileID: 482761789}
+  - {fileID: 1167784067}
   - {fileID: 1505682355}
   - {fileID: 1315903373}
   - {fileID: 829530397}
   leftBoundaries:
   - {fileID: 103949196}
+  - {fileID: 545929600}
   - {fileID: 1728026537}
   - {fileID: 1673371763}
   - {fileID: 1424551475}
   rightBoundaries:
   - {fileID: 476461133}
+  - {fileID: 242338234}
   - {fileID: 1072752198}
   - {fileID: 1244335}
   - {fileID: 1506915572}
   nextMarkers:
   - {fileID: 1409492994}
+  - {fileID: 1975288374}
   - {fileID: 2094975409}
   - {fileID: 1555697688}
   ease: 13
@@ -1639,7 +1737,7 @@ GameObject:
   - component: {fileID: 1472955816}
   - component: {fileID: 1472955815}
   m_Layer: 5
-  m_Name: Room4Text1
+  m_Name: Room5Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1716,7 +1814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505682356}
   m_Layer: 0
-  m_Name: Room2
+  m_Name: Room3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1740,7 +1838,7 @@ Transform:
   - {fileID: 1421958904}
   - {fileID: 705756901}
   m_Father: {fileID: 1094200386}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506915571
 GameObject:
@@ -1752,9 +1850,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1506915572}
   m_Layer: 0
-  m_Name: Room4RightBoundary
+  m_Name: Room5RightBoundary
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1782,9 +1880,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1555697688}
   m_Layer: 0
-  m_Name: Room3NextMarker
+  m_Name: Room4NextMarker
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1844,7 +1942,7 @@ GameObject:
   - component: {fileID: 1642133237}
   - component: {fileID: 1642133236}
   m_Layer: 5
-  m_Name: Room3Text3
+  m_Name: Room4Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1921,9 +2019,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1673371763}
   m_Layer: 0
-  m_Name: Room3LeftBoundary
+  m_Name: Room4LeftBoundary
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1951,9 +2049,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1728026537}
   m_Layer: 0
-  m_Name: Room2LeftBoundary
+  m_Name: Room3LeftBoundary
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2104,7 +2202,7 @@ GameObject:
   - component: {fileID: 1943737384}
   - component: {fileID: 1943737383}
   m_Layer: 5
-  m_Name: Room2Text1
+  m_Name: Room3Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2171,6 +2269,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943737381}
   m_CullTransparentMesh: 0
+--- !u!1 &1975288373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1975288374}
+  m_Layer: 0
+  m_Name: Room2NextMarker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1975288374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975288373}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 68, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1167784068}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1999550522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2310,9 +2438,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2094975409}
   m_Layer: 0
-  m_Name: Room2NextMarker
+  m_Name: Room3NextMarker
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

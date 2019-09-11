@@ -4,63 +4,69 @@ using DG.Tweening;
 
 public class Room4Controller : RoomController
 {
+    private const float MIN_SLOW = 0.5f;
+    private const float MAX_SLOW = 0.9f;
+
     #region fields
     [SerializeField]
     private GameObject player;
     [SerializeField]
-    private GameObject roomTransitionObject;
+    private Transform slowStart;
+    [SerializeField]
+    private Transform slowEnd;
     [SerializeField]
     private Text[] texts;
 
-    private RoomTransition roomTransition;
-    private Rigidbody2D playerBody;
+    private PlayerController playerController;
+    private Text previousText;
+    private int currentIndex;
     #endregion
 
     void Start()
     {
-        Debug.Assert(texts.Length > 0);
-        roomTransition = roomTransitionObject.GetComponent<RoomTransition>();
-        playerBody = player.GetComponent<Rigidbody2D>();
-    }
+        playerController = player.GetComponent<PlayerController>();
+    } 
 
     protected override void OnUpdate()
     {
-        if (player.transform.position.y < -10)
-            roomTransition.GotoRoom(0, true);
+        float playerX = player.transform.position.x;
+        float startX = slowStart.position.x;
+        float endX = slowEnd.position.x;
+
+        float progress = Mathf.Clamp01((playerX - startX) / (endX - startX));
+        float speedFactor = 1 - (progress > 0 ? (progress * (MAX_SLOW - MIN_SLOW) + MIN_SLOW) : 0);
+        playerController.speed = speedFactor * playerController.maxSpeed;
+
+        int index = (int) Mathf.Floor(progress * texts.Length);
+        if (index != currentIndex)
+        {
+            ShowText(index);
+            currentIndex = index;
+        }
     }
 
     protected override void OnActivate()
     {
-        texts[0].color = Color.white;
-        for (int i = 1; i < texts.Length; ++i)
-            texts[i].color = new Color(1, 1, 1, 0);
-
-        Sequence seq = DOTween.Sequence();
-        seq.AppendInterval(5);
-        seq.Append(texts[0].DOFade(0, 1));
-        for (int i = 1; i < texts.Length; ++i)
-        {
-            seq.AppendInterval(0.5f);
-            seq.Append(texts[i].DOFade(1, 1));
-            seq.AppendInterval(3.5f);
-            seq.Append(texts[i].DOFade(0, 1));
-        }
-        seq.Play();
-
-        // Activate player's rigidbody for this room
-        playerBody.simulated = true;
+        playerController.speed = playerController.maxSpeed;
+        ShowText(0);
     }
 
     protected override void OnDeactivate()
     {
-        // Deactivate and reset player's rigidbody, since it's no longer needed
-        playerBody.simulated = false;
-        playerBody.rotation = 0;
-        playerBody.velocity = Vector2.zero;
-        playerBody.angularVelocity = 0;
-        playerBody.inertia = 0;
+        playerController.speed = playerController.maxSpeed;
+        ShowText(-1);
+    }
 
-        // Also reset the transform rotation
-        player.transform.rotation = Quaternion.identity;
+    private void ShowText(int index)
+    {
+        bool inRange = index >= 0 && index < texts.Length;
+        // Fade out previous and fade in new text
+        Sequence seq = DOTween.Sequence();
+        if (previousText != null)
+            seq.Append(previousText.DOFade(0, 0.5f)).AppendInterval(0.5f);
+        if (inRange)
+            seq.Append(texts[index].DOFade(1, 0.5f));
+        seq.OnComplete(() => previousText = inRange ? texts[index] : null);
+        seq.Play();
     }
 }

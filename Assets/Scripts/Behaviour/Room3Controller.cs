@@ -4,69 +4,74 @@ using DG.Tweening;
 
 public class Room3Controller : RoomController
 {
-    private const float MIN_SLOW = 0.5f;
-    private const float MAX_SLOW = 0.9f;
+    private const int RESET_COUNT = 3;
 
     #region fields
     [SerializeField]
     private GameObject player;
     [SerializeField]
-    private Transform slowStart;
+    private Text text;
     [SerializeField]
-    private Transform slowEnd;
+    private string[] texts;
     [SerializeField]
-    private Text[] texts;
+    private Transform resetMarker;
+    [SerializeField]
+    private Transform resetPosition;
 
     private PlayerController playerController;
-    private Text previousText;
-    private int currentIndex;
+    private int moveCounter;
+    private bool isResetActive;
     #endregion
 
     void Start()
     {
         playerController = player.GetComponent<PlayerController>();
-    } 
+    }
 
     protected override void OnUpdate()
     {
-        float playerX = player.transform.position.x;
-        float startX = slowStart.position.x;
-        float endX = slowEnd.position.x;
-
-        float progress = Mathf.Clamp01((playerX - startX) / (endX - startX));
-        float speedFactor = 1 - (progress > 0 ? (progress * (MAX_SLOW - MIN_SLOW) + MIN_SLOW) : 0);
-        playerController.speed = speedFactor * playerController.maxSpeed;
-
-        int index = (int) Mathf.Floor(progress * texts.Length);
-        if (index != currentIndex)
+        if (isResetActive && player.transform.position.x > resetMarker.position.x)
         {
-            ShowText(index);
-            currentIndex = index;
+            isResetActive = false;
+            playerController.IsActive = false;
+            ++moveCounter;
+
+            player.transform
+                .DOMoveX(resetPosition.position.x, 2)
+                .SetEase(Ease.InOutCubic)
+                .OnComplete(() => {
+                    isResetActive = true;
+                    playerController.IsActive = true;
+                    if (moveCounter >= RESET_COUNT)
+                        Deactivate();
+                });
+            Sequence seq = DOTween.Sequence();
+            seq.Append(text.DOFade(0, 1));
+            seq.AppendCallback(() => text.text = GetNextText(moveCounter));
+            seq.AppendInterval(0.5f);
+            seq.Append(text.DOFade(1, 1));
+            seq.Play();
         }
     }
 
     protected override void OnActivate()
     {
-        playerController.speed = playerController.maxSpeed;
-        ShowText(0);
+        moveCounter = 0;
+        isResetActive = true;
+        text.text = GetNextText(0);
     }
 
     protected override void OnDeactivate()
     {
-        playerController.speed = playerController.maxSpeed;
-        ShowText(-1);
+        moveCounter = 0;
+        isResetActive = false;
+        text.text = GetNextText(-1);
     }
 
-    private void ShowText(int index)
+    private string GetNextText(int index)
     {
-        bool inRange = index >= 0 && index < texts.Length;
-        // Fade out previous and fade in new text
-        Sequence seq = DOTween.Sequence();
-        if (previousText != null)
-            seq.Append(previousText.DOFade(0, 0.5f)).AppendInterval(0.5f);
-        if (inRange)
-            seq.Append(texts[index].DOFade(1, 0.5f));
-        seq.OnComplete(() => previousText = inRange ? texts[index] : null);
-        seq.Play();
+        if (index < 0 || index >= texts.Length)
+            return "";
+        return texts[index];
     }
 }
